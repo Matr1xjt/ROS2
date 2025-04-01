@@ -1,0 +1,164 @@
+<robot name="car_">
+    <material name="yellow">
+        <color rgba="0.8 0.8 0.0 0.5"/>
+    </material>
+    <material name="red">
+        <color rgba="1.0 0.0 0.0 0.5"/>
+        
+    </material>
+
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <sphere radius="0.001"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.2 0.12 0.07"/>
+            </geometry>
+
+            <material name="yellow"/>
+        </visual>
+
+
+
+        <collision>
+            <origin xyz="0 0 0.0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.12 0.07"/>
+            </geometry>
+            <material name="yellow"/>
+          </collision>
+          <inertial>
+            <mass value="0.2"/>
+            <inertia ixx="0.0122666" ixy="0" ixz="0" iyy="0.0122666" iyz="0" izz="0.02"/>
+          </inertial>
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        
+        <origin xyz="0.0 0.0 0.05" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+    <link name="car_">
+        <visual>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+          </collision>
+          <inertial>
+            <mass value="0.2"/>
+              <inertia ixx="0.000190416666667" ixy="0" ixz="0" iyy="0.0001904" iyz="0" izz="0.00036"/>
+            </inertial>
+    </link>
+
+
+    <joint name="car2car_" type="continuous">
+        <parent link="base_link"/>
+        <child link="car_"/>
+        
+        <origin xyz="0.08 0.07 -0.04" rpy="1.57 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+
+    <link name="car_2">
+        <visual>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+          </collision>
+          <inertial>
+            <mass value="0.2"/>
+              <inertia ixx="0.000190416666667" ixy="0" ixz="0" iyy="0.0001904" iyz="0" izz="0.00036"/>
+            </inertial>
+    </link>
+
+    <joint name="car2car_2" type="continuous">
+        <parent link="base_link"/>
+        <child link="car_2"/>
+        
+        <origin xyz="-0.08 0.07 -0.04" rpy="1.57 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+
+    <link name="car_3">
+        <visual>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+          </collision>
+          <inertial>
+            <mass value="0.2"/>
+              <inertia ixx="0.000190416666667" ixy="0" ixz="0" iyy="0.0001904" iyz="0" izz="0.00036"/>
+            </inertial>
+    </link>
+
+    <joint name="car2car_3" type="continuous">
+        <parent link="base_link"/>
+        <child link="car_3"/>
+        
+        <origin xyz="-0.08 -0.07 -0.04" rpy="1.57 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+
+    <link name="car_4">
+        <visual>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.025" length="0.02"/>
+            </geometry>
+            <material name="red"/>
+          </collision>
+          <inertial>
+            <mass value="0.2"/>
+              <inertia ixx="0.000190416666667" ixy="0" ixz="0" iyy="0.0001904" iyz="0" izz="0.00036"/>
+            </inertial>
+    </link>
+    <joint name="car2car_4" type="continuous">
+        <parent link="base_link"/>
+        <child link="car_4"/>
+        
+        <origin xyz="0.08 -0.07 -0.04" rpy="1.57 0.0 0.0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+</robot>

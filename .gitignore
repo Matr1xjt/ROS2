@@ -1,6 +1,10 @@
 # 忽略 build 目录
 build/
-
+install/
+log/
+**/build/
+**/install/
+**/log/
 # 忽略所有 .o、.exe、.log 文件
 *.o
 *.exe
