@@ -1,0 +1,17 @@
+# 忽略 build 目录
+build/
+
+# 忽略所有 .o、.exe、.log 文件
+*.o
+*.exe
+*.log
+
+# 忽略 CMake 生成的文件
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# 忽略 IDE 相关文件
+.vscode/
+.idea/
+
